@@ -29,12 +29,12 @@ details details;
         this.message = message;
     }
 
-    public RegisterResponse(String username, String email, String phone, String password) {
-        this.username = username;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-    }
+//    public RegisterResponse(String username, String email, String phone, String password) {
+//        this.username = username;
+//        this.email = email;
+//        this.phone = phone;
+//        this.password = password;
+//    }
 
     public String getUsername() {
         return username;

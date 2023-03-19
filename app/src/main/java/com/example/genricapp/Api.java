@@ -1,5 +1,6 @@
 package com.example.genricapp;
 
+import com.example.genricapp.Model.OTP_Response;
 import com.example.genricapp.Model.RegisterResponse;
 
 import java.util.Map;
@@ -17,11 +18,14 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface Api {
-    @POST("register")
-    @FormUrlEncoded
-    Call<RegisterResponse> Register(
-//            @Body RegisterResponse registerResponse
-             @FieldMap Map<String, String> params
+
+
+
+    @Multipart
+    @POST("uniqueAPI")
+    Call<OTP_Response>sent_OTP(
+            @Part ("email")RequestBody email,
+            @Part ("phone")RequestBody phone
     );
 
     @Multipart
@@ -30,7 +34,14 @@ public interface Api {
             @Part ("username")RequestBody username,
             @Part ("email")RequestBody email,
             @Part ("phone")RequestBody phone,
-            @Part ("passsword")RequestBody password
+            @Part ("password")RequestBody password,
+            @Part ("reg_id")RequestBody reg_id,
+            @Part ("device_id")RequestBody device_id,
+            @Part ("login_type")RequestBody login_type,
+            @Part ("latitude")RequestBody latitude,
+            @Part ("longitude")RequestBody longitude,
+            @Part ("chatId")RequestBody chatId
+
             );
 
 //    @FormUrlEncoded
